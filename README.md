@@ -3,7 +3,8 @@
 
 # Gridded climate data with R
 
-[These notes](slides.html) are prepared for the [UCSB ecodata science
+[These notes](https://mikejohnson51.github.io/climateR-intro/) are
+prepared for the [UCSB ecodata science
 club](https://eco-data-science.github.io/). The goal is to introduce the
 concepts of gridded climate data, the process for remote data access,
 and workflows for easy data retrieval in R. Specifically, we will cover

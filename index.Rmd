@@ -356,7 +356,7 @@ knitr::include_graphics("img/thredds.png")
 
 ## Common Data Model: Precipitation
 
-```{r, fig.height = 8, echo = FALSE}
+```{r, out.width = "50%", echo = FALSE}
 knitr::include_graphics("img/opendap.png")
 ``` 
 ---
@@ -1136,7 +1136,7 @@ class: middle, center, inverse
 
 **Mike Johnson**
 ******
-[Email `r icon::fa_desktop()`](jmj00@ucsb.edu)
+[Email `r icon::fa_desktop()`](mailto:jmj00@ucsb.edu)
 [Github `r icon::fa_desktop()`](https://github.com/mikejohnson51)
 [Webpage `r icon::fa_globe()`](http://mikejohnson51.github.io)
 
