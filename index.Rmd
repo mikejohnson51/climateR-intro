@@ -469,7 +469,7 @@ AOI::aoi_get(country = "Netherlands") %>%
 ---
 ## We are going into the weeds:
 
- - Necessary for understanding, not for implemnetation!
+ - Necessary for understanding, not for implementation!
  
 ```{r, fig.cap = "Data Stabs and Cookie Cutters Workflow", out.width = "60%",echo = FALSE}
 knitr::include_graphics("img/weeds.jpg")
@@ -483,15 +483,23 @@ class: center, middle, inverse
 ---
 
 # Cookie Cutter ...
+
+.pull-left[
 ```{r}
 AOI     = aoi_get(state = "CA")
 (extent = st_bbox(AOI))
 (crs    = st_crs(AOI)$proj4string)
+```
+]
 
+--
+
+.pull-right[
+```{r}
 plot(AOI$geometry, border  = "darkred",lwd = 2)
 plot(st_as_sfc(extent), add = TRUE,  lwd = 3)
 ```
-
+]
 ---
 # Resource Connection ...
 
@@ -870,7 +878,7 @@ levelplot(stack(random),
 
 ---
 
-### Multi-Scenario, Mulit-Model (2 models, 2 days, 2 scenarios, 1 variable, Texas)
+### Multi-Scenario, Mulit-Model (2 models, 2 days, 2 scenarios, 1 variable, Tactas)
 
 ```{r}
 random = getMACA(aoi_get(state = c("TX")),
@@ -967,14 +975,14 @@ plot(sites$geometry,  add = TRUE, pch = 16, cex = .2)
 ]
 
 ---
-# ClimateR multi-point extaction
+# ClimateR multi-point extraction
 
 .pull-left[
 ```{r}
 site_extract = extract_sites(brazil_rain, 
                              sites, 
                              "ID")
-site_extract$prcp[1:10, 1:5]
+site_extract$prcp[1:10, 1:4]
 ```
 ]
 
@@ -990,13 +998,13 @@ head(brazil_sites)
 
 ---
 
-# ClimateR multi-point extaction
+# ClimateR multi-point extraction
 
 .pull-left[
 ```{r}
-ggplot(data = site_extract$prcp, 
-       aes(x = date, y = pt_74789)) + 
-  geom_line() + 
+ggplot(data = site_extract$prcp,
+       aes(x = date, y = site_190760)) +
+  geom_line() +
   theme_linedraw()
 ```
 ]
@@ -1117,7 +1125,7 @@ save_gif(
 
 - Climate data is a useful resource for environmental data science
 - The nature of climate models and data make the resources themselves HUGE
-- To only get the data we need we can access remote datasets and request specific subsets
+- To only get the data we need, we can request specific subsets of remotely stored data
 - To do this, we need a good understanding of the raster data structure and web technologies
 - `AOI` & `climateR` are two packages that facilitate these workflows
 - The way you use climate data is endless but require an understanding of raster data processing and manipulation...
@@ -1139,4 +1147,6 @@ class: middle, center, inverse
 [Email `r icon::fa_desktop()`](mailto:jmj00@ucsb.edu)
 [Github `r icon::fa_desktop()`](https://github.com/mikejohnson51)
 [Webpage `r icon::fa_globe()`](http://mikejohnson51.github.io)
-
+******
+[AOI `r icon::fa_github_alt()`](https://github.com/mikejohnson51/AOI)
+[climateR `r icon::fa_github_alt()`](https://github.com/mikejohnson51/climateR)
